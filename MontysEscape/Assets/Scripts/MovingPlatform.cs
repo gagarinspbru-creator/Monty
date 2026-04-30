@@ -53,7 +53,8 @@ public class MovingPlatform : MonoBehaviour
                 Rigidbody2D playerRb = col.GetComponent<Rigidbody2D>();
                 if (playerRb != null && IsPlayerOnPlatform(col.gameObject))
                 {
-                    playerRb.velocity += currentVelocity / Time.fixedDeltaTime;
+                    Vector2 moveVelocity = new Vector2(currentVelocity.x, currentVelocity.y);
+                    playerRb.velocity += moveVelocity / Time.fixedDeltaTime;
                 }
             }
         }
